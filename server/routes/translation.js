@@ -8,10 +8,29 @@ const { Translate } = require('@google-cloud/translate').v2;
 const router = express.Router();
 
 // Google Cloud Translation クライアント初期化
-const translate = new Translate({
-  projectId: process.env.GOOGLE_CLOUD_PROJECT_ID,
-  keyFilename: process.env.GOOGLE_APPLICATION_CREDENTIALS
-});
+let translate;
+try {
+  const credentials = process.env.GOOGLE_APPLICATION_CREDENTIALS;
+  if (typeof credentials === 'string') {
+    // JSON文字列の場合はパース
+    const credentialsObj = JSON.parse(credentials);
+    translate = new Translate({
+      projectId: process.env.GOOGLE_CLOUD_PROJECT_ID,
+      credentials: credentialsObj
+    });
+  } else {
+    // ローカル開発環境（ファイルパス）
+    translate = new Translate({
+      projectId: process.env.GOOGLE_CLOUD_PROJECT_ID,
+      keyFilename: process.env.GOOGLE_APPLICATION_CREDENTIALS
+    });
+  }
+} catch (error) {
+  console.error('Google Cloud Translation client initialization failed:', error);
+  translate = new Translate({
+    projectId: process.env.GOOGLE_CLOUD_PROJECT_ID
+  });
+}
 
 /**
  * サポート言語一覧取得
