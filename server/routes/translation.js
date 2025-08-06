@@ -14,9 +14,15 @@ try {
   if (typeof credentials === 'string') {
     // JSON文字列の場合はパース
     const credentialsObj = JSON.parse(credentials);
+    // Vercel の OpenSSL 3 で PEM パースに失敗する事例対策として、
+    // 一旦一時ファイルに書き出して keyFilename 経由で読み込ませる
+    const fs = require('fs');
+    const path = require('path');
+    const tmpCredPath = path.join('/tmp', 'gcp-sa.json');
+    fs.writeFileSync(tmpCredPath, JSON.stringify(credentialsObj));
     translate = new Translate({
       projectId: process.env.GOOGLE_CLOUD_PROJECT_ID,
-      credentials: credentialsObj
+      keyFilename: tmpCredPath
     });
   } else {
     // ローカル開発環境（ファイルパス）
