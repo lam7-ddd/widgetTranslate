@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "functions": {
-    "server/index.js": {
-      "runtime": "nodejs18.x"
+  "builds": [
+    {
+      "src": "server/index.js",
+      "use": "@vercel/node"
     }
-  },
+  ],
   "routes": [
     {
       "src": "/widget\\.(js|css)",
@@ -18,8 +19,5 @@
       "src": "/(.*)",
       "dest": "/server/index.js"
     }
-  ],
-  "env": {
-    "NODE_ENV": "production"
-  }
+  ]
 }
