@@ -163,11 +163,12 @@
         // デモ用の埋め込みコード（実際の運用では登録時に生成される）
         (function() {
             var widgetId = 'demo-widget-id';
-            var apiUrl = 'http://localhost:3000/api';
+            var baseUrl = window.location.origin; // 現在のドメインを自動取得
+            var apiUrl = baseUrl + '/api';
             
             // ウィジェットスクリプト読み込み
             var script = document.createElement('script');
-            script.src = 'http://localhost:3000/widget.js?id=' + widgetId;
+            script.src = baseUrl + '/widget.js?id=' + widgetId;
             script.async = true;
             script.onload = function() {
                 if (typeof WidgetTranslate !== 'undefined') {
@@ -182,7 +183,7 @@
             // ウィジェットCSS読み込み
             var link = document.createElement('link');
             link.rel = 'stylesheet';
-            link.href = 'http://localhost:3000/widget.css';
+            link.href = baseUrl + '/widget.css';
             document.head.appendChild(link);
         })();
     </script>
