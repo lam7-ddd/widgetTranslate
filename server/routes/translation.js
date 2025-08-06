@@ -18,6 +18,10 @@ try {
     // 一旦一時ファイルに書き出して keyFilename 経由で読み込ませる
     const fs = require('fs');
     const path = require('path');
+        // 改行エスケープを実際の改行に戻す
+    if (credentialsObj.private_key) {
+      credentialsObj.private_key = credentialsObj.private_key.replace(/\\n/g, '\n');
+    }
     const tmpCredPath = path.join('/tmp', 'gcp-sa.json');
     fs.writeFileSync(tmpCredPath, JSON.stringify(credentialsObj));
     translate = new Translate({
