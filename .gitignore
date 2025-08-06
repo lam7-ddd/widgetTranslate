@@ -13,9 +13,12 @@ yarn-error.log*
 
 # Google Cloud credentials
 service-account-key.json
-# Note: package.json should be tracked, only exclude credential files
+transcription-*.json
+*.json
 !package.json
 !package-lock.json
+!vercel.json
+!railway.json
 
 # Build outputs
 dist/
