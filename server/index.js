@@ -69,6 +69,26 @@ setupStaticFiles(app);
 app.use('/api/translate', translationRoutes);
 app.use('/api/widget', widgetRoutes);
 
+// ルートパス
+app.get('/', (req, res) => {
+  res.json({
+    name: 'Widget Translate API',
+    version: '1.0.0',
+    description: 'リアルタイム翻訳ウィジェット API',
+    endpoints: {
+      health: '/health',
+      demo: '/test/demo.html',
+      api: {
+        languages: '/api/translate/languages',
+        translate: '/api/translate/text',
+        widget: '/api/widget'
+      }
+    },
+    status: 'OK',
+    timestamp: new Date().toISOString()
+  });
+});
+
 // ヘルスチェック
 app.get('/health', (req, res) => {
   res.json({ status: 'OK', timestamp: new Date().toISOString() });
