@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Widget Translate - デモページ</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .section {
+            margin: 30px 0;
+            padding: 20px;
+            border-left: 4px solid #4285f4;
+            background: #f8f9ff;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .feature-list li:before {
+            content: "✓";
+            color: #4285f4;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        .demo-text {
+            background: #fff3cd;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            border: 1px solid #ffeaa7;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            color: #666;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        
+        .button {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #4285f4;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            margin: 10px 5px;
+            transition: background 0.2s;
+        }
+        
+        .button:hover {
+            background: #3367d6;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Widget Translate デモページ</h1>
+        
+        <div class="demo-text">
+            <strong>このページは翻訳ウィジェットのテスト用デモページです。</strong>
+            右上の翻訳ボタンから言語を選択して、リアルタイム翻訳をお試しください。
+        </div>
+        
+        <div class="section">
+            <h2>主な機能</h2>
+            <ul class="feature-list">
+                <li>リアルタイムテキスト翻訳</li>
+                <li>多言語サポート（英語、中国語、韓国語など）</li>
+                <li>自動DOM監視による動的コンテンツ対応</li>
+                <li>翻訳結果のキャッシュ機能</li>
+                <li>レスポンシブデザイン対応</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>技術仕様</h2>
+            <p>このウィジェットは以下の技術を使用して構築されています：</p>
+            <ul>
+                <li><strong>バックエンド:</strong> Node.js + Express</li>
+                <li><strong>翻訳API:</strong> Google Cloud Translation API</li>
+                <li><strong>フロントエンド:</strong> Vanilla JavaScript</li>
+                <li><strong>スタイル:</strong> CSS3（ダークモード対応）</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>使用方法</h2>
+            <p>ウェブサイトに以下のコードを埋め込むだけで、翻訳機能を追加できます：</p>
+            <div class="demo-text">
+                <code>
+                    &lt;script src="https://your-domain.com/widget.js"&gt;&lt;/script&gt;
+                </code>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>サンプルコンテンツ</h2>
+            <p>以下のテキストも翻訳されます：</p>
+            
+            <h3>日本の文化について</h3>
+            <p>日本は四季がはっきりしており、それぞれの季節に美しい自然の変化を楽しむことができます。春には桜が咲き、夏には緑豊かな山々、秋には紅葉、冬には雪景色が楽しめます。</p>
+            
+            <h3>テクノロジーの進歩</h3>
+            <p>人工知能や機械学習の技術が急速に発展し、私たちの生活に大きな変化をもたらしています。翻訳技術もその一つで、言語の壁を越えたコミュニケーションが可能になっています。</p>
+            
+            <div class="demo-text">
+                <strong>注意:</strong> このデモでは、画像のalt属性やtitle属性も翻訳対象に含まれます。
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>お問い合わせ</h2>
+            <p>ご質問やサポートが必要な場合は、以下のリンクからお問い合わせください：</p>
+            <a href="#" class="button" title="サポートページへのリンク">サポート</a>
+            <a href="#" class="button" title="ドキュメントページへのリンク">ドキュメント</a>
+        </div>
+        
+        <div class="footer">
+            <p>&copy; 2024 Widget Translate. すべての権利を保有します。</p>
+            <p>このデモページは翻訳ウィジェットのテスト用です。</p>
+        </div>
+    </div>
+
+    <!-- Widget Translate 埋め込みコード -->
+    <script>
+        // デモ用の埋め込みコード（実際の運用では登録時に生成される）
+        (function() {
+            var widgetId = 'demo-widget-id';
+            var apiUrl = 'http://localhost:3000/api';
+            
+            // ウィジェットスクリプト読み込み
+            var script = document.createElement('script');
+            script.src = 'http://localhost:3000/widget.js?id=' + widgetId;
+            script.async = true;
+            script.onload = function() {
+                if (typeof WidgetTranslate !== 'undefined') {
+                    new WidgetTranslate({
+                        widgetId: widgetId,
+                        apiUrl: apiUrl
+                    });
+                }
+            };
+            document.head.appendChild(script);
+            
+            // ウィジェットCSS読み込み
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = 'http://localhost:3000/widget.css';
+            document.head.appendChild(link);
+        })();
+    </script>
+</body>
+</html>
